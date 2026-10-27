@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+phone_shots/
+shots/
+*.log
+*.png
+.DS_Store
