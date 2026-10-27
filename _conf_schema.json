@@ -1,0 +1,68 @@
+{
+  "allowed_senders": {
+    "type": "list",
+    "description": "允许操作手机的账号 ID（QQ 号 / 用户 ID）",
+    "hint": "留空则任何人都用不了——这是刻意的安全默认。填你自己的账号，例如 [\"123456789\"]。",
+    "default": []
+  },
+  "allowed_platforms": {
+    "type": "list",
+    "description": "允许的平台名（AstrBot 里平台的 ID）",
+    "hint": "留空表示不限平台，但发送者仍须在 allowed_senders 里。填了就只有这些平台能操作手机。",
+    "default": []
+  },
+  "adb_path": {
+    "type": "string",
+    "description": "adb 可执行文件路径",
+    "hint": "填 adb 表示从 PATH 里找；Windows 常见路径如 D:\\platform-tools\\adb.exe",
+    "default": "adb"
+  },
+  "device_serial": {
+    "type": "string",
+    "description": "设备序列号",
+    "hint": "adb devices 第一列。留空表示用唯一在线的那台；多设备时必须填。",
+    "default": ""
+  },
+  "command_timeout": {
+    "type": "int",
+    "description": "单条 adb 命令超时（秒）",
+    "default": 30
+  },
+  "shots_dir": {
+    "type": "string",
+    "description": "截图存放目录",
+    "hint": "留空则放在插件数据目录的 shots/ 下。",
+    "default": ""
+  },
+  "max_ui_nodes": {
+    "type": "int",
+    "description": "phone_ui 一次返回多少条控件",
+    "default": 120
+  },
+  "adb_keyboard_ime": {
+    "type": "string",
+    "description": "机器人打字用的输入法 IME id",
+    "hint": "默认 ADBKeyboard。装好后用 adb shell ime list -s 可以看到准确的 id。",
+    "default": "com.android.adbkeyboard/.AdbIME"
+  },
+  "human_ime": {
+    "type": "string",
+    "description": "主人自己用的输入法 IME id",
+    "hint": "phone_ime human 会切回它。留空则该功能不可用。",
+    "default": ""
+  },
+  "sensitive_keywords": {
+    "type": "list",
+    "description": "敏感词：界面上出现这些词就先停下等人确认",
+    "hint": "涉及钱和账号安全的词，建议保留默认。",
+    "default": [
+      "支付", "密码", "银行", "转账", "验证码", "钱包", "收款", "付款", "免密",
+      "身份证", "余额", "充值", "提现", "确认支付", "输入密码", "指纹", "面容"
+    ]
+  },
+  "confirm_seconds": {
+    "type": "int",
+    "description": "phone_confirm 解锁敏感界面的时长（秒）",
+    "default": 180
+  }
+}

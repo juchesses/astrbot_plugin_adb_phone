@@ -1,0 +1,7 @@
+name: astrbot_plugin_adb_phone
+display_name: 手机操作（ADB）
+desc: 让机器人用 adb 操作一台安卓手机——读界面、点按、输入、开应用；读不到控件树的界面（如微信）自动改用 OCR。
+version: v0.1.0
+author: dsh
+repo: https://github.com/jucheeses/astrbot_plugin_adb_phone
+astrbot_version: ">=4.29.0,<5"
